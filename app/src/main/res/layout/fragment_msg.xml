@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msg_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/msg_layout">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,10 +11,9 @@
         android:text="消息" />
 
 
-
-        <com.techscl.lovechat.SlideCutListView
-            android:id="@+id/msg_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.techscl.lovechat.SlideCutListView>
+    <com.techscl.lovechat.customview.SlideCutListView
+        android:id="@+id/msg_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.techscl.lovechat.customview.SlideCutListView>
 
 </LinearLayout>

@@ -84,11 +84,15 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent setting = new Intent(this, SettingsActivity.class);
-            startActivity(setting);
-            return true;
+        switch (id){
+            case R.id.action_settings:
+                Intent setting = new Intent(this, SettingsActivity.class);
+                startActivity(setting);
+                break;
+            case R.id.add_friend:
+                Intent add_friend=new Intent(this,AddFriendActivity.class);
+                startActivity(add_friend);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

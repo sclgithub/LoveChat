@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.easemob.chat.EMConversation;
 import com.techscl.lovechat.R;
-import com.techscl.lovechat.SlideCutListView;
+import com.techscl.lovechat.customview.SlideCutListView;
 import com.techscl.lovechat.adapter.MsgListAdapter;
 
 import java.util.ArrayList;
