@@ -41,4 +41,7 @@
     <!-- 我-->
     <string name="personalized_signature">签名</string>
     <string name="modification">修改资料</string>
+    <!-- 注册界面-->
+    <string name="affirm_password">确认密码</string>
+    <string name="hint_affirm_password">请再输入一次</string>
 </resources>
