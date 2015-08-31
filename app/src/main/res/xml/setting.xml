@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/msg_alert">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="receive_msg_alert"
+            android:title="@string/receive_msg_alert" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="receive_msg_alert"
+            android:key="voice_alert"
+            android:title="@string/voice_alert" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="receive_msg_alert"
+            android:key="vibrate"
+            android:textColorLink="@android:color/black"
+            android:title="@string/vibrate" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="@string/chat_set"
+        android:title="@string/chat_set">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="play_voice_via_speaker"
+            android:title="@string/play_voice_via_speaker" />
+        <PreferenceScreen
+            android:key="blacklist"
+            android:title="@string/blacklist" />
+        <PreferenceScreen
+            android:key="iOS_pusher"
+            android:title="@string/iOS_pusher" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

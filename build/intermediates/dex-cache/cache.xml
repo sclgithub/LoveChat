@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dllo/Desktop/LoveChat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="/Users/dllo/Desktop/LoveChat/app/build/intermediates/pre-dexed/debug/classes-c9e3f0a687eb552420bd0c2102d585df39fc0c61.jar" />
+    </item>
+
+</items>

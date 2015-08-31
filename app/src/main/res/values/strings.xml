@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">LoveChat</string>
+    <!-- 菜单项-->
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+    <string name="scanner_code">扫一扫</string>
+    <string name="add_friend">添加朋友</string>
+    <string name="feedback">反馈建议</string>
+    <string name="search">搜索</string>
+    <!-- tab标签-->
+    <string-array name="tab">
+        <item name="msg">消息</item>
+        <item name="friends">通讯录</item>
+        <item name="find">发现</item>
+        <item name="me">我</item>
+    </string-array>
+    <string name="msg">消息</string>
+    <string name="friends">通讯录</string>
+    <string name="find">发现</string>
+    <string name="me">我</string>
+    <!-- 列表组件-->
+    <string name="nickname">昵称</string>
+    <string name="latest_msg">最新消息</string>
+    <string name="msg_arrive_time">到达时间</string>
+    <!-- 登录界面-->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <!-- 设置-->
+    <string name="set">设置</string>
+    <string name="msg_alert">新消息提醒</string>
+    <string name="receive_msg_alert">接收新消息提醒</string>
+    <string name="voice_alert">声音</string>
+    <string name="vibrate">振动</string>
+    <string name="chat_set">聊天设置</string>
+    <string name="play_voice_via_speaker">使用扬声器播放语音</string>
+    <string name="blacklist">黑名单</string>
+    <string name="iOS_pusher">iOS离线推送昵称</string>
+    <string name="logout">退出登录</string>
+    <!-- 我-->
+    <string name="personalized_signature">签名</string>
+    <string name="modification">修改资料</string>
+</resources>
