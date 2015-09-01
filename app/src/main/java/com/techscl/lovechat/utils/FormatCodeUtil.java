@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * Created by wuqi on 15/7/3.
+ * Created by 宋春麟 on 15/7/3.
  */
 public class FormatCodeUtil {
     public static String codingFormat(String str) {

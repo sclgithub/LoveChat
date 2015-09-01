@@ -3,42 +3,44 @@ package com.techscl.lovechat.activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.zxing.WriterException;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.base.GestureActivity;
+import com.techscl.lovechat.utils.To;
 import com.techscl.lovechat.zxing.activity.CaptureActivity;
 import com.techscl.lovechat.zxing.encoding.EncodingHandler;
 
 /**
- * Created by dllo on 15/9/1.
+ * Created by 宋春麟 on 15/9/1.
  */
 public class CodeScanActivity extends GestureActivity {
     private LinearLayout scanner_code_layout;
     private TextView resultTextView;
     private EditText qrStrEditText;
     private ImageView qrImgImageView;
+    private Toolbar toolbar;
+    private Button scanBarCodeButton, generateQRCodeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_scan);
 
-        scanner_code_layout = (LinearLayout) findViewById(R.id.scanner_code_layout);
-        resultTextView = (TextView) this.findViewById(R.id.tv_scan_result);
-        qrStrEditText = (EditText) this.findViewById(R.id.et_qr_string);
-        qrImgImageView = (ImageView) this.findViewById(R.id.iv_qr_image);
-        Button scanBarCodeButton = (Button) this.findViewById(R.id.btn_scan_barcode);
+        initView();
 
         scanBarCodeButton.setOnClickListener(new View.OnClickListener() {
-
+            /**
+             * 打开扫描
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 //打开扫描界面扫描条形码或二维码
@@ -47,9 +49,11 @@ public class CodeScanActivity extends GestureActivity {
             }
         });
 
-        Button generateQRCodeButton = (Button) this.findViewById(R.id.btn_add_qrcode);
         generateQRCodeButton.setOnClickListener(new View.OnClickListener() {
-
+            /**
+             * 生成二维码
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 try {
@@ -59,7 +63,7 @@ public class CodeScanActivity extends GestureActivity {
                         Bitmap qrCodeBitmap = EncodingHandler.createQRCode(contentString, 350);
                         qrImgImageView.setImageBitmap(qrCodeBitmap);
                     } else {
-                        Toast.makeText(CodeScanActivity.this, "Text can not be empty", Toast.LENGTH_SHORT).show();
+                        To.showShort(CodeScanActivity.this, "请输入内容");
                     }
 
                 } catch (WriterException e) {
@@ -70,6 +74,28 @@ public class CodeScanActivity extends GestureActivity {
         });
     }
 
+    /**
+     * 初始化
+     */
+    private void initView() {
+        scanner_code_layout = (LinearLayout) this.findViewById(R.id.scanner_code_layout);
+        resultTextView = (TextView) this.findViewById(R.id.tv_scan_result);
+        qrStrEditText = (EditText) this.findViewById(R.id.et_qr_string);
+        qrImgImageView = (ImageView) this.findViewById(R.id.iv_qr_image);
+        scanBarCodeButton = (Button) this.findViewById(R.id.btn_scan_barcode);
+        generateQRCodeButton = (Button) this.findViewById(R.id.btn_add_qrcode);
+        toolbar = (Toolbar) this.findViewById(R.id.scanner_code_toolbar);
+        toolbar.setTitle(R.string.scanner_code);
+        scanner_code_layout.setOnTouchListener(this);
+    }
+
+    /**
+     * 接收扫描结果
+     *
+     * @param requestCode 请求吗
+     * @param resultCode  结果码
+     * @param data        数据
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

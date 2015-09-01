@@ -35,7 +35,7 @@ import java.io.InputStream;
 /**
  * ImageUtil
  *
- * @author wei2bei132
+ * @author 宋春麟
  */
 public class ImageUtil {
 

@@ -19,7 +19,7 @@ import com.techscl.lovechat.utils.L;
 import com.techscl.lovechat.utils.To;
 
 /**
- * Created by dllo on 15/8/28.
+ * Created by 宋春麟 on 15/8/28.
  */
 public class LoginActivity extends GestureActivity implements View.OnClickListener {
     private TextInputLayout til_username, til_password;

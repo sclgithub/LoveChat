@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by dllo on 15/8/28.
+ * Created by 宋春麟 on 15/8/28.
  */
 public class MsgListAdapter extends ArrayAdapter<EMConversation> {
     private LayoutInflater inflater;

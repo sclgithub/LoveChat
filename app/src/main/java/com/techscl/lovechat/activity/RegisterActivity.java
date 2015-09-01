@@ -18,7 +18,7 @@ import com.techscl.lovechat.base.GestureActivity;
 import com.techscl.lovechat.utils.To;
 
 /**
- * Created by dllo on 15/8/31.
+ * Created by 宋春麟 on 15/8/31.
  */
 public class RegisterActivity extends GestureActivity implements View.OnClickListener {
     private EditText username, password, affirm_password;

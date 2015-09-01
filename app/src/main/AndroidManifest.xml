@@ -44,6 +44,10 @@
         <activity android:name=".activity.LoginActivity" />
         <!-- 主页面-->
         <activity android:name=".activity.MainActivity" />
+        <!-- 新闻详情-->
+        <activity android:name=".activity.NewsDetailActivity" />
+        <!-- 新闻列表-->
+        <activity android:name=".activity.NewsListActivity" />
         <!-- 注册界面-->
         <activity android:name=".activity.RegisterActivity" />
         <!-- 设置界面-->

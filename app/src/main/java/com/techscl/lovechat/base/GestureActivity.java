@@ -1,7 +1,7 @@
 package com.techscl.lovechat.base;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,9 +9,9 @@ import android.view.View;
 import com.techscl.lovechat.utils.To;
 
 /**
- * Created by dllo on 15/8/28.
+ * Created by 宋春麟 on 15/8/28.
  */
-public class GestureActivity extends Activity implements GestureDetector.OnGestureListener, View.OnTouchListener {
+public class GestureActivity extends ActionBarActivity implements GestureDetector.OnGestureListener, View.OnTouchListener {
     private GestureDetector gestureDetector;
     private int verticalMinDistance = 30;
     private int middleDistance = 150;

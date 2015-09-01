@@ -44,4 +44,18 @@
     <!-- 注册界面-->
     <string name="affirm_password">确认密码</string>
     <string name="hint_affirm_password">请再输入一次</string>
+    <!-- 发现界面-->
+    <string name="friend_trends">好友动态</string>
+    <string name="nearby_friends">附近的人</string>
+    <string name="shake">摇一摇</string>
+    <string name="news_rss">新闻订阅</string>
+    <string name="weather">本地天气</string>
+
+    <string name="news_headlines">新闻标题</string>
+    <string name="news_content">新闻内容</string>
+    <string name="develop_reading">拓展阅读</string>
+    <string name="updatetime">更新时间</string>
+    <string name="News_sources">新闻来源</string>
+    <string name="auther">作者</string>
+    <string name="hot">热度:</string>
 </resources>

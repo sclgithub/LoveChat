@@ -30,4 +30,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile files('libs/junit-4.12.jar')
     compile files('libs/zxing.jar')
+    compile files('libs/gson-2.2.1.jar')
+    compile files('libs/Volley.jar')
+    compile files('libs/jsoup-1.8.1.jar')
 }

@@ -1,7 +1,7 @@
 package com.techscl.lovechat.base;
 
 /**
- * Created by dllo on 15/8/29.
+ * Created by 宋春麟 on 15/8/29.
  */
 public class Msg {
     private String nickname, msg_arrive_time, latest_msg, msg_image;

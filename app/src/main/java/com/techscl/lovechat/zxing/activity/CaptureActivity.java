@@ -1,6 +1,5 @@
 package com.techscl.lovechat.zxing.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -14,11 +13,13 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.techscl.lovechat.R;
+import com.techscl.lovechat.base.GestureActivity;
 import com.techscl.lovechat.zxing.camera.CameraManager;
 import com.techscl.lovechat.zxing.decoding.CaptureActivityHandler;
 import com.techscl.lovechat.zxing.decoding.InactivityTimer;
@@ -30,9 +31,9 @@ import java.util.Vector;
 /**
  * Initial the camera
  *
- * @author Ryan.Tang
+ * @author songchunlin
  */
-public class CaptureActivity extends Activity implements Callback {
+public class CaptureActivity extends GestureActivity implements Callback {
 
     private static final float BEEP_VOLUME = 0.10f;
     private static final long VIBRATE_DURATION = 200L;
@@ -54,6 +55,7 @@ public class CaptureActivity extends Activity implements Callback {
     private boolean playBeep;
     private boolean vibrate;
     private Button cancelScanButton;
+    private LinearLayout camera_layout;
 
     /**
      * Called when the activity is first created.
@@ -62,11 +64,8 @@ public class CaptureActivity extends Activity implements Callback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera);
-        // ViewUtil.addTopView(getApplicationContext(), this,
-        // R.string.scan_card);
         CameraManager.init(getApplication());
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);
     }
@@ -183,9 +182,6 @@ public class CaptureActivity extends Activity implements Callback {
 
     private void initBeepSound() {
         if (playBeep && mediaPlayer == null) {
-            // The volume on STREAM_SYSTEM is not adjustable, and users found it
-            // too loud,
-            // so we now play on the music stream.
             setVolumeControlStream(AudioManager.STREAM_MUSIC);
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);

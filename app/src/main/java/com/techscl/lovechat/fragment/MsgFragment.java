@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by dllo on 15/8/27.
+ * Created by 宋春麟 on 15/8/27.
  * hah
  */
 public class MsgFragment extends Fragment {

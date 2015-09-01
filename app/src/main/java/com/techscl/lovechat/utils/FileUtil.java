@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * FileUtil
  *
- * @author wei2bei132
+ * @author 宋春麟
  */
 public class FileUtil {
 

@@ -3,7 +3,7 @@ package com.techscl.lovechat.utils;
 /**
  * ArrayUtil
  * 
- * @author wei2bei132
+ * @author 宋春麟
  * 
  */
 public class ArrayUtil {

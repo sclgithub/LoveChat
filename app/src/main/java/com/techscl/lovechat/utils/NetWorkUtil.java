@@ -7,7 +7,7 @@ import android.net.NetworkInfo.State;
 /**
  * NetWorkUtil
  *
- * @author wei2bei132
+ * @author 宋春麟
  */
 public class NetWorkUtil {
     private static State mWifiState = null;

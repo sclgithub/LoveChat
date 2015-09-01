@@ -8,7 +8,7 @@ import com.techscl.lovechat.R;
 import com.techscl.lovechat.base.GestureActivity;
 
 /**
- * Created by dllo on 15/8/31.
+ * Created by 宋春麟 on 15/8/31.
  */
 public class AddFriendActivity extends GestureActivity {
     private LinearLayout add_friend_layout;

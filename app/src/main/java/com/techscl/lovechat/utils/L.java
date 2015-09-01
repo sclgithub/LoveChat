@@ -3,7 +3,7 @@ package com.techscl.lovechat.utils;
 import android.util.Log;
 
 /**
- * Created by wuqi on 15/6/19.
+ * Created by 宋春麟 on 15/6/19.
  */
 public class L {
 

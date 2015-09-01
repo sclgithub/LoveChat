@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.techscl.lovechat.R;
 
 /**
- * Created by dllo on 15/8/28.
+ * Created by 宋春麟 on 15/8/28.
  */
 public class SettingsActivity extends PreferenceActivity implements View.OnClickListener, GestureDetector.OnGestureListener {
     private PreferenceScreen preferenceScreen;

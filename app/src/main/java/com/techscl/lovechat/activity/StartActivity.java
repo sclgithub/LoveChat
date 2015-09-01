@@ -11,7 +11,7 @@ import com.techscl.lovechat.R;
 import com.techscl.lovechat.utils.L;
 
 /**
- * Created by dllo on 15/8/31.
+ * Created by 宋春麟 on 15/8/31.
  */
 public class StartActivity extends Activity {
 

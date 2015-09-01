@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.techscl.lovechat.R;
 
 /**
- * Created by dllo on 15/8/27.
+ * Created by 宋春麟 on 15/8/27.
  */
 public class FriendsFragment extends Fragment {
     private ListView friends_list;

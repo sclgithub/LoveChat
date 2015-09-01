@@ -11,10 +11,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.adapter.MainFragmentAdapter;
+import com.techscl.lovechat.db.sqlite.SQLiteDataBaseTools;
 import com.techscl.lovechat.fragment.FindFragment;
 import com.techscl.lovechat.fragment.FriendsFragment;
 import com.techscl.lovechat.fragment.MeFragment;
@@ -28,7 +32,9 @@ public class MainActivity extends ActionBarActivity {
     private ViewPager viewpager_main;// 定义viewpager
     private TabLayout tabLayout;// 定义tabLayout
     private MainFragmentAdapter fragmentAdapter;// 定义适配器
-
+    public static RequestQueue requestQueue;
+    public static SQLiteDataBaseTools sqLiteDataBaseTools;
+    public static ImageLoader imageLoader;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +80,8 @@ public class MainActivity extends ActionBarActivity {
         tabLayout.getTabAt(2).setCustomView(R.layout.tab_find);
         tabLayout.getTabAt(3).setCustomView(R.layout.tab_me);
         tabLayout.getTabCount();
+
+        requestQueue = Volley.newRequestQueue(this);
     }
 
     @Override

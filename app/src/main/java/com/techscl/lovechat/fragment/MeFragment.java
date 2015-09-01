@@ -17,7 +17,7 @@ import com.techscl.lovechat.activity.SettingsActivity;
 import com.techscl.lovechat.activity.StartActivity;
 
 /**
- * Created by dllo on 15/8/27.
+ * Created by 宋春麟 on 15/8/27.
  */
 public class MeFragment extends Fragment implements View.OnClickListener {
     private Button logout, modification;

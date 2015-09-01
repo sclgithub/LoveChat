@@ -4,8 +4,151 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="发现" />
+        android:scrollbars="none">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/min_margin">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/mid_min_margin"
+                        android:stretchColumns="1">
+
+                        <TableRow android:layout_margin="@dimen/min_margin">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/circle_pressed" />
+
+                            <TextView
+                                android:id="@+id/friend_trends"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/friend_trends"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+
+                        <TableRow android:layout_margin="@dimen/min_margin">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/nearby_pressed" />
+
+                            <TextView
+                                android:id="@+id/nearby_friends"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/nearby_friends"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+
+                        <TableRow android:layout_margin="@dimen/min_margin">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/code_pressed" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/scanner_code"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/setting_table"
+                            android:layout_margin="@dimen/min_margin">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/shake_pressed" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/shake"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+
+                        <TableRow android:layout_margin="@dimen/min_margin"
+                            android:id="@+id/news_rss">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/rss_pressed" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/news_rss"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/min_margin">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/mid_min_margin"
+                        android:stretchColumns="1">
+
+                        <TableRow android:layout_margin="@dimen/min_margin">
+
+                            <ImageView
+                                android:layout_width="@dimen/max_margin"
+                                android:layout_height="@dimen/max_margin"
+                                android:src="@mipmap/weather_pressed" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/weather"
+                                android:textSize="@dimen/nickname_text_size" />
+                        </TableRow>
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </ScrollView>
 </LinearLayout>

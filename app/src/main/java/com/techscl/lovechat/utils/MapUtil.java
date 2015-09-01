@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 /**
  * MapUtil
  *
- * @author wei2bei132
+ * @author 宋春麟
  */
 public class MapUtil {
 
