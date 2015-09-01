@@ -13,26 +13,26 @@ import android.util.Log;
  * <strong>Attentions</strong>
  * <li>You should add <strong>android.permission.ACCESS_NETWORK_STATE</strong> in manifest, to get network status.</li>
  * </ul>
- * 
+ *
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-11-03
  */
 public class NetWorkUtils {
 
-    public static final String NETWORK_TYPE_WIFI       = "wifi";
-    public static final String NETWORK_TYPE_3G         = "eg";
-    public static final String NETWORK_TYPE_2G         = "2g";
-    public static final String NETWORK_TYPE_WAP        = "wap";
-    public static final String NETWORK_TYPE_UNKNOWN    = "unknown";
+    public static final String NETWORK_TYPE_WIFI = "wifi";
+    public static final String NETWORK_TYPE_3G = "eg";
+    public static final String NETWORK_TYPE_2G = "2g";
+    public static final String NETWORK_TYPE_WAP = "wap";
+    public static final String NETWORK_TYPE_UNKNOWN = "unknown";
     public static final String NETWORK_TYPE_DISCONNECT = "disconnect";
 
     /**
      * Get network type
-     * 
+     *
      * @param context
      * @return
      */
     public static int getNetworkType(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager)context
+        ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager == null ? null : connectivityManager.getActiveNetworkInfo();
         return networkInfo == null ? -1 : networkInfo.getType();
@@ -40,17 +40,18 @@ public class NetWorkUtils {
 
     /**
      * Get network type name
-     * 
+     *
      * @param context
      * @return
      */
     public static String getNetworkTypeName(Context context) {
-        ConnectivityManager manager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo;
         String type = NETWORK_TYPE_DISCONNECT;
         if (manager == null || (networkInfo = manager.getActiveNetworkInfo()) == null) {
             return type;
-        };
+        }
+        ;
 
         if (networkInfo.isConnected()) {
             String typeName = networkInfo.getTypeName();
@@ -69,12 +70,12 @@ public class NetWorkUtils {
 
     /**
      * Whether is fast mobile network
-     * 
+     *
      * @param context
      * @return
      */
     private static boolean isFastMobileNetwork(Context context) {
-        TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (telephonyManager == null) {
             return false;
         }
@@ -119,6 +120,7 @@ public class NetWorkUtils {
 
     /**
      * 判断网络是否处于连接状态
+     *
      * @param context
      * @return
      */

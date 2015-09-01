@@ -88,6 +88,9 @@ public class LoginActivity extends GestureActivity implements View.OnClickListen
      */
     private void startLogin() {
         EMChatManager.getInstance().login(username.getText().toString(), password.getText().toString(), new EMCallBack() {//回调
+            /**
+             * 登录成功
+             */
             @Override
             public void onSuccess() {
                 runOnUiThread(new Runnable() {
@@ -96,7 +99,7 @@ public class LoginActivity extends GestureActivity implements View.OnClickListen
                         EMChatManager.getInstance().loadAllConversations();
                         To.showLong(LoginActivity.this, "登录成功");
                         /**
-                         * 此处应从登录成功处写入
+                         * 存储登录状态
                          */
                         StartActivity.editor = StartActivity.preferences.edit();
                         StartActivity.editor.putBoolean("login", false);
@@ -108,20 +111,49 @@ public class LoginActivity extends GestureActivity implements View.OnClickListen
                 });
             }
 
+            /**
+             * 登录进程
+             * @param progress 进程代码
+             * @param status 登录状态
+             */
             @Override
-            public void onProgress(int progress, String status) {
+            public void onProgress(int progress, final String status) {
                 L.i(status);
-                To.showShort(context, status);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        To.showShort(LoginActivity.this, status);
+                    }
+                });
             }
 
+            /**
+             * 登录失败
+             * @param code 错误码
+             * @param message 错误信息
+             */
             @Override
-            public void onError(int code, String message) {
+            public void onError(int code, final String message) {
                 L.i(message);
-                To.showShort(context, message);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        To.showShort(LoginActivity.this, message);
+                    }
+                });
             }
         });
     }
 
+    /**
+     * 注册后返回注册的结果,将帐号密码设置到登录框
+     *
+     * @param requestCode 请求码
+     * @param resultCode  结果码
+     * @param data        返回的数据
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

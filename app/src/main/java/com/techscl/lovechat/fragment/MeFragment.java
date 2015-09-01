@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TableRow;
 
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.activity.LoginActivity;
+import com.techscl.lovechat.activity.SettingsActivity;
 import com.techscl.lovechat.activity.StartActivity;
 
 /**
@@ -20,6 +22,7 @@ import com.techscl.lovechat.activity.StartActivity;
 public class MeFragment extends Fragment implements View.OnClickListener {
     private Button logout, modification;
     private ImageView user_img;
+    private TableRow setting_table;
 
     @Nullable
     @Override
@@ -37,9 +40,11 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         logout = (Button) view.findViewById(R.id.logout);
         modification = (Button) view.findViewById(R.id.modification);
         user_img = (ImageView) view.findViewById(R.id.user_img);
+        setting_table = (TableRow) view.findViewById(R.id.setting_table);
         logout.setOnClickListener(this);
         modification.setOnClickListener(this);
         user_img.setOnClickListener(this);
+        setting_table.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +65,10 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.user_img:
 
+                break;
+            case R.id.setting_table:
+                Intent setting_table = new Intent(getActivity(), SettingsActivity.class);
+                startActivity(setting_table);
                 break;
             default:
                 break;

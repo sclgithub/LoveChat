@@ -81,6 +81,7 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
 
     /**
      * 长按
+     *
      * @param motionEvent
      */
     @Override
@@ -90,6 +91,7 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
 
     /**
      * 快速划过
+     *
      * @param motionEvent
      * @param motionEvent1
      * @param v
@@ -108,6 +110,7 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
 
     /**
      * 手势添加到触摸事件
+     *
      * @param ev
      * @return
      */

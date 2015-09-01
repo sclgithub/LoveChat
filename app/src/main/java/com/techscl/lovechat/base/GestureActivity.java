@@ -53,7 +53,7 @@ public class GestureActivity extends Activity implements GestureDetector.OnGestu
         if (motionEvent1.getX() - motionEvent.getX() > verticalMinDistance && Math.abs(v) > minVelocity && (Math.abs(motionEvent1.getY() - motionEvent.getY()) < middleDistance)) {
             finish();
         } else if (motionEvent.getX() - motionEvent1.getX() > verticalMinDistance && Math.abs(v) > minVelocity && (Math.abs(motionEvent1.getY() - motionEvent.getY()) < middleDistance)) {
-            To.showShort(this,"左滑");
+            To.showShort(this, "左滑");
         }
         return false;
     }

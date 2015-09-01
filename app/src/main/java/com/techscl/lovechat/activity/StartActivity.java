@@ -42,7 +42,7 @@ public class StartActivity extends Activity {
                         finish();
                     }
                 }
-            }, 1400);
+            }, 1111);
             flag = false;
         }
     }

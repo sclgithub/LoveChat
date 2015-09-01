@@ -17,7 +17,7 @@ public class FindFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view=inflater.inflate(R.layout.fragment_find,null);
+        View view = inflater.inflate(R.layout.fragment_find, null);
 
         return view;
 

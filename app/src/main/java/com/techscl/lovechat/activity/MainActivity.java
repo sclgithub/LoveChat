@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
+import com.easemob.chat.EMChatManager;
+import com.easemob.chat.EMGroupManager;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.adapter.MainFragmentAdapter;
 import com.techscl.lovechat.fragment.FindFragment;
@@ -35,6 +37,10 @@ public class MainActivity extends ActionBarActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
         initView();
+
+        EMGroupManager.getInstance().loadAllGroups();
+
+        EMChatManager.getInstance().loadAllConversations();
 
     }
 
@@ -84,14 +90,18 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.action_settings:
                 Intent setting = new Intent(this, SettingsActivity.class);
                 startActivity(setting);
                 break;
             case R.id.add_friend:
-                Intent add_friend=new Intent(this,AddFriendActivity.class);
+                Intent add_friend = new Intent(this, AddFriendActivity.class);
                 startActivity(add_friend);
+                break;
+            case R.id.scanner_code:
+                Intent scanner_code = new Intent(this, CodeScanActivity.class);
+                startActivity(scanner_code);
                 break;
         }
 

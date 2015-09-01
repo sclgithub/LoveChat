@@ -27,5 +27,6 @@ public class LoveChat extends Application {
 
         loveChatContext = getApplicationContext();
 
+
     }
 }

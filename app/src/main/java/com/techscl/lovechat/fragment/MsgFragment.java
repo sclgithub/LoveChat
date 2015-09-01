@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 
 import com.easemob.chat.EMConversation;
 import com.techscl.lovechat.R;
-import com.techscl.lovechat.customview.SlideCutListView;
 import com.techscl.lovechat.adapter.MsgListAdapter;
+import com.techscl.lovechat.customview.SlideCutListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +23,13 @@ import java.util.List;
  * hah
  */
 public class MsgFragment extends Fragment {
+    public LinearLayout msg_layout;
     private InputMethodManager inputMethodManager;
     private SlideCutListView msg_list;
     private MsgListAdapter msgListAdapter;
-    public LinearLayout msg_layout;
     private boolean hidden;
     private List<EMConversation> conversationList = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,11 +44,11 @@ public class MsgFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (savedInstanceState!=null&&savedInstanceState.getBoolean("isConflict",false))
+        if (savedInstanceState != null && savedInstanceState.getBoolean("isConflict", false))
             return;
-        inputMethodManager= (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        msg_layout= (LinearLayout) getView().findViewById(R.id.msg_layout);
-        msg_list= (SlideCutListView) getView().findViewById(R.id.msg_list);
+        inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        msg_layout = (LinearLayout) getView().findViewById(R.id.msg_layout);
+        msg_list = (SlideCutListView) getView().findViewById(R.id.msg_list);
     }
 
     /**

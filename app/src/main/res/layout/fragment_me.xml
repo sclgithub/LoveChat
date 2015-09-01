@@ -66,8 +66,7 @@
 
                             <ImageView
                                 android:layout_width="@dimen/max_margin"
-                                android:layout_height="@dimen/max_margin"
-                                android:src="@mipmap/me_pressed" />
+                                android:layout_height="@dimen/max_margin" />
 
                             <TextView
                                 android:id="@+id/username"
@@ -84,7 +83,7 @@
                             <ImageView
                                 android:layout_width="@dimen/max_margin"
                                 android:layout_height="@dimen/max_margin"
-                                android:src="@mipmap/me_pressed" />
+                                android:src="@mipmap/personalized_signature_pressed" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -101,12 +100,13 @@
                             android:layout_margin="@dimen/mid_min_margin"
                             android:text="人生就是这样，有欢笑也有泪水。一部分人主要负责欢笑，另一部分人主要负。" />
 
-                        <TableRow>
+                        <TableRow
+                            android:id="@+id/setting_table">
 
                             <ImageView
                                 android:layout_width="@dimen/max_margin"
                                 android:layout_height="@dimen/max_margin"
-                                android:src="@mipmap/me_pressed" />
+                                android:src="@mipmap/settings_pressed" />
 
                             <TextView
                                 android:layout_width="wrap_content"

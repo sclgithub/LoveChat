@@ -15,7 +15,6 @@ import com.easemob.exceptions.EaseMobException;
 import com.techscl.lovechat.LoveChat;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.base.GestureActivity;
-import com.techscl.lovechat.utils.L;
 import com.techscl.lovechat.utils.To;
 
 /**
@@ -27,6 +26,7 @@ public class RegisterActivity extends GestureActivity implements View.OnClickLis
     private LinearLayout register_layout;
     private Context context;
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class RegisterActivity extends GestureActivity implements View.OnClickLis
         affirm_password = (EditText) findViewById(R.id.affirm_password);
         register = (Button) findViewById(R.id.register);
         register_layout = (LinearLayout) findViewById(R.id.register_layout);
-        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.register);
         register.setOnClickListener(this);
         register_layout.setOnTouchListener(this);
@@ -83,24 +83,28 @@ public class RegisterActivity extends GestureActivity implements View.OnClickLis
     private void startRegister() {
         try {
             EMChatManager.getInstance().createAccountOnServer(username.getText().toString(), affirm_password.getText().toString());
-            Intent result = new Intent(RegisterActivity.this,LoginActivity.class);
+            Intent result = new Intent(RegisterActivity.this, LoginActivity.class);
             result.putExtra("username", username.getText().toString());
             result.putExtra("password", password.getText().toString());
             setResult(10, result);
             finish();
-        } catch (EaseMobException e) {
+        } catch (final EaseMobException e) {
             e.printStackTrace();
-            int errorCode = e.getErrorCode();
-            if (errorCode == EMError.NONETWORK_ERROR) {
-                To.showShort(LoveChat.getLoveChatContext(), "网络异常");
-            } else if (errorCode == EMError.USER_ALREADY_EXISTS) {
-//                To.showShort(LoveChat.getLoveChatContext(), "用户名已被注册");
-                L.i("已注册");
-            } else if (errorCode == EMError.UNAUTHORIZED) {
-                To.showShort(LoveChat.getLoveChatContext(), "权限不足");
-            } else {
-                To.showShort(LoveChat.getLoveChatContext(), e.getMessage());
-            }
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    int errorCode = e.getErrorCode();
+                    if (errorCode == EMError.NONETWORK_ERROR) {
+                        To.showShort(LoveChat.getLoveChatContext(), "网络异常");
+                    } else if (errorCode == EMError.USER_ALREADY_EXISTS) {
+                        To.showShort(LoveChat.getLoveChatContext(), "用户名已被注册");
+                    } else if (errorCode == EMError.UNAUTHORIZED) {
+                        To.showShort(LoveChat.getLoveChatContext(), "权限不足");
+                    } else {
+                        To.showShort(LoveChat.getLoveChatContext(), e.getMessage());
+                    }
+                }
+            });
         }
     }
 
