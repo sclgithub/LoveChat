@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +34,7 @@ public class CodeScanActivity extends GestureActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_scan);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
         initView();
 
@@ -86,7 +88,14 @@ public class CodeScanActivity extends GestureActivity {
         generateQRCodeButton = (Button) this.findViewById(R.id.btn_add_qrcode);
         toolbar = (Toolbar) this.findViewById(R.id.scanner_code_toolbar);
         toolbar.setTitle(R.string.scanner_code);
+        toolbar.setNavigationIcon(R.mipmap.back);
         scanner_code_layout.setOnTouchListener(this);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     /**

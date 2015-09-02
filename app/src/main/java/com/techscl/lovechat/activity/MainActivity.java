@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -23,22 +24,34 @@ import com.techscl.lovechat.fragment.FindFragment;
 import com.techscl.lovechat.fragment.FriendsFragment;
 import com.techscl.lovechat.fragment.MeFragment;
 import com.techscl.lovechat.fragment.MsgFragment;
+import com.techscl.lovechat.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
+    public static RequestQueue requestQueue;
+    public static SQLiteDataBaseTools sqLiteDataBaseTools;
+    public static ImageLoader imageLoader;
     private Toolbar toolbar;// 定义toolbar
     private ViewPager viewpager_main;// 定义viewpager
     private TabLayout tabLayout;// 定义tabLayout
     private MainFragmentAdapter fragmentAdapter;// 定义适配器
-    public static RequestQueue requestQueue;
-    public static SQLiteDataBaseTools sqLiteDataBaseTools;
-    public static ImageLoader imageLoader;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        requestQueue = Volley.newRequestQueue(this);
+        /**
+         * 获取手机DPI,手机屏幕宽度和高度
+         */
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        L.i("width:" + displayMetrics.widthPixels + "像素");
+        L.i("height:" + displayMetrics.heightPixels + "像素");
+        L.i("dpi:" + displayMetrics.densityDpi);
+        L.i("density:" + displayMetrics.density);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
@@ -74,6 +87,7 @@ public class MainActivity extends ActionBarActivity {
         viewpager_main.setAdapter(fragmentAdapter);// 绑定适配器
         tabLayout.setTabsFromPagerAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(viewpager_main);// 联动
+
         // 设置图标来自自定义组件
         tabLayout.getTabAt(0).setCustomView(R.layout.tab_msg);
         tabLayout.getTabAt(1).setCustomView(R.layout.tab_friends);
@@ -81,7 +95,6 @@ public class MainActivity extends ActionBarActivity {
         tabLayout.getTabAt(3).setCustomView(R.layout.tab_me);
         tabLayout.getTabCount();
 
-        requestQueue = Volley.newRequestQueue(this);
     }
 
     @Override

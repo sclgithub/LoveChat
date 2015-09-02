@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -47,14 +48,23 @@ public class NewsListActivity extends GestureActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
         news_list = (ListView) findViewById(R.id.news_list);
         srff = (SwipeRefreshLoadingLayout) findViewById(R.id.srff_reconmmend);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         toolbar.setTitle(R.string.news_rss);
 
         toolbar.setNavigationIcon(R.mipmap.back);
 
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         getList();
@@ -144,13 +154,20 @@ public class NewsListActivity extends GestureActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         return super.onCreateOptionsMenu(menu);
 
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+        }
+
         return super.onOptionsItemSelected(item);
 
     }
+
 }

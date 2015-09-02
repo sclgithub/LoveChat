@@ -3,9 +3,11 @@ package com.techscl.lovechat.activity;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -22,13 +24,14 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
     private int verticalMinDistance = 30;
     private int middleDistance = 150;
     private int minVelocity = 0;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
         addPreferencesFromResource(R.xml.setting);
 
@@ -39,10 +42,19 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
      * 初始化
      */
     private void initView() {
-        back = (ImageView) findViewById(R.id.back);
         layout_set = (LinearLayout) findViewById(R.id.layout_set);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.set);
+        toolbar.setTitleTextColor(R.color.white);
+        toolbar.setNavigationIcon(R.mipmap.back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         gestureDetector = new GestureDetector(this);
-        back.setOnClickListener(this);
+
     }
 
     /**
@@ -53,9 +65,7 @@ public class SettingsActivity extends PreferenceActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.back:
-                finish();
-                break;
+
         }
     }
 

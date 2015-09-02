@@ -7,7 +7,7 @@ import android.util.Log;
  */
 public class L {
 
-    private static final String TAG = "techscl";
+    private static final String TAG = "my";
     public static boolean isDebug = true;// 是否需要打印bug，可以在application的onCreate函数里面初始化
     private L() {
         /* cannot be instantiated */

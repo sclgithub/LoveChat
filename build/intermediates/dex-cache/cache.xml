@@ -2,25 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/dllo/Desktop/LoveChat/app/libs/gson-2.2.1.jar"
+        jar="/Users/dllo/Desktop/LoveChat/app/libs/pinyin4j-2.5.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="42a24d508f5e05bd22cc42bd2e2babd7b5466ec9">
-        <dex dex="/Users/dllo/Desktop/LoveChat/app/build/intermediates/pre-dexed/debug/gson-2.2.1-c7048be84cb62daf241f16537ea75b424fa4048b.jar" />
-    </item>
-    <item
-        jar="/Users/dllo/Desktop/LoveChat/app/libs/Volley.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
-        <dex dex="/Users/dllo/Desktop/LoveChat/app/build/intermediates/pre-dexed/debug/Volley-58451f21b2d243d22f15ea57fc2c499aa56aaf63.jar" />
-    </item>
-    <item
-        jar="/Users/dllo/Desktop/LoveChat/app/libs/jsoup-1.8.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
-        <dex dex="/Users/dllo/Desktop/LoveChat/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-c2efe539345f87b7fd2b1ea127831159a93c7f8f.jar" />
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="/Users/dllo/Desktop/LoveChat/app/build/intermediates/pre-dexed/debug/pinyin4j-2.5.0-375aee4c0dc5a4be38d096997a3899b6a00f011b.jar" />
     </item>
 
 </items>

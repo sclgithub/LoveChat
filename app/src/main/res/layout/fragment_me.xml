@@ -48,8 +48,8 @@
                         <TableRow>
 
                             <ImageView
-                                android:layout_width="@dimen/max_margin"
-                                android:layout_height="@dimen/max_margin"
+                                android:layout_width="@dimen/min_max_margin"
+                                android:layout_height="@dimen/min_max_margin"
                                 android:src="@mipmap/me_pressed" />
 
                             <TextView
@@ -81,8 +81,8 @@
                         <TableRow>
 
                             <ImageView
-                                android:layout_width="@dimen/max_margin"
-                                android:layout_height="@dimen/max_margin"
+                                android:layout_width="@dimen/min_max_margin"
+                                android:layout_height="@dimen/min_max_margin"
                                 android:src="@mipmap/personalized_signature_pressed" />
 
                             <TextView
@@ -100,12 +100,13 @@
                             android:layout_margin="@dimen/mid_min_margin"
                             android:text="人生就是这样，有欢笑也有泪水。一部分人主要负责欢笑，另一部分人主要负。" />
 
-                        <TableRow
-                            android:id="@+id/setting_table">
+                        <TableRow android:id="@+id/setting_table"
+                            android:paddingTop="@dimen/min_margin"
+                            android:paddingBottom="@dimen/min_margin">
 
                             <ImageView
-                                android:layout_width="@dimen/max_margin"
-                                android:layout_height="@dimen/max_margin"
+                                android:layout_width="@dimen/min_max_margin"
+                                android:layout_height="@dimen/min_max_margin"
                                 android:src="@mipmap/settings_pressed" />
 
                             <TextView
@@ -121,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_margin="@dimen/min_margin">
+                            android:layout_margin="@dimen/mid_margin">
 
                             <Button
                                 android:id="@+id/modification"

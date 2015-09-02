@@ -44,6 +44,8 @@
         <activity android:name=".activity.LoginActivity" />
         <!-- 主页面-->
         <activity android:name=".activity.MainActivity" />
+        <!-- 修改资料-->
+        <activity android:name=".activity.ModificationActivity" />
         <!-- 新闻详情-->
         <activity android:name=".activity.NewsDetailActivity" />
         <!-- 新闻列表-->
@@ -68,7 +70,7 @@
             android:name=".zxing.activity.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:theme="@style/Base.Theme.AppCompat"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <!-- 设置环信应用的appkey -->
         <meta-data

@@ -38,7 +38,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/updatetime" />
+                        android:text="@string/update_time" />
 
                     <TextView
                         android:id="@+id/newsSource"
@@ -52,7 +52,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/auther" />
+                        android:text="@string/author" />
 
                     <TextView
                         android:layout_width="wrap_content"
