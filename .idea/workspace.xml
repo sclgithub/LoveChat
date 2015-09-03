@@ -27,20 +27,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="979c011e-615a-4ec5-9f4b-3727708f2f12" name="Default" comment="天气/退出登录确认/修改资料界面&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/DataC.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/NewMessageBroadcastReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/AddFriendActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/AddFriendActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/FindFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/FindFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/FriendsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/FriendsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/LoveChat.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/LoveChat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/MeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/MeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/MsgFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/fragment/MsgFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/techscl/lovechat/activity/RegisterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_friend.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_friend.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_modification.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_modification.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <list default="true" id="979c011e-615a-4ec5-9f4b-3727708f2f12" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LoveChat.iws" />
@@ -2347,7 +2334,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441201314068</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加好友未完成&#10;">
+      <created>1441287547082</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1441287547082</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2433,7 +2426,8 @@
     <MESSAGE value="二维码扫描&#10;" />
     <MESSAGE value="发现界面布局&#10;" />
     <MESSAGE value="天气/退出登录确认/修改资料界面&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="天气/退出登录确认/修改资料界面&#10;" />
+    <MESSAGE value="添加好友未完成&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加好友未完成&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2468,6 +2462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22019868">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2754,6 +2749,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2817,6 +2813,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37417942">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
