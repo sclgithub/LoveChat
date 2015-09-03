@@ -1,6 +1,7 @@
 package com.techscl.lovechat.activity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.techscl.lovechat.NewMessageBroadcastReceiver;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.adapter.MainFragmentAdapter;
 import com.techscl.lovechat.db.sqlite.SQLiteDataBaseTools;
@@ -42,6 +44,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NewMessageBroadcastReceiver msgReceiver = new NewMessageBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter(EMChatManager.getInstance().getNewMessageBroadcastAction());
+        intentFilter.setPriority(3);
+        registerReceiver(msgReceiver, intentFilter);
         requestQueue = Volley.newRequestQueue(this);
         /**
          * 获取手机DPI,手机屏幕宽度和高度
@@ -56,6 +62,8 @@ public class MainActivity extends ActionBarActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
         initView();
+
+        EMChatManager.getInstance().getChatOptions().setUseRoster(true);
 
         EMGroupManager.getInstance().loadAllGroups();
 

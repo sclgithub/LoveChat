@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TableRow;
 
+import com.easemob.chat.EMChatManager;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.activity.LoginActivity;
 import com.techscl.lovechat.activity.ModificationActivity;
@@ -119,6 +120,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 StartActivity.editor = StartActivity.preferences.edit();
                 StartActivity.editor.putBoolean("login", true);
                 StartActivity.editor.commit();
+                EMChatManager.getInstance().logout();//此方法为同步方法
                 Intent logout = new Intent(getActivity(), LoginActivity.class);
                 startActivity(logout);
                 getActivity().finish();

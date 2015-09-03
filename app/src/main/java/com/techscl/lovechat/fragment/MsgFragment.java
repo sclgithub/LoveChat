@@ -2,6 +2,7 @@ package com.techscl.lovechat.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class MsgFragment extends Fragment {
     private MsgListAdapter msgListAdapter;
     private boolean hidden;
     private List<EMConversation> conversationList = new ArrayList<>();
+    private Handler handler = new Handler();
 
     @Nullable
     @Override

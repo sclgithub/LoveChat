@@ -46,11 +46,7 @@ public class FindFragment extends Fragment implements View.OnClickListener {
         StringRequest stringRequest = new StringRequest("http://api.lib360.net/open/weather.json?city=" + area, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                L.i("" + s);
                 Gson gson = new Gson();// 实例化gson对象
-//                Type type = new TypeToken<ArrayList<Weather>>() {
-//                }.getType();
-//                List<Weather> weathers = gson.fromJson(s, type);
                 Weather weathers = gson.fromJson(s, Weather.class);
                 L.i("天气:" + weathers.getDatanow().getWeather());
                 L.i("高温:" + weathers.getDatanow().getTempMax());

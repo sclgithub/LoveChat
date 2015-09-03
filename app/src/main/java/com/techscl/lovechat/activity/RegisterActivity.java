@@ -1,6 +1,5 @@
 package com.techscl.lovechat.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -25,14 +24,15 @@ public class RegisterActivity extends GestureActivity implements View.OnClickLis
     private EditText username, password, affirm_password;
     private Button register;
     private LinearLayout register_layout;
-    private Context context;
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
+
         initView();
 
     }

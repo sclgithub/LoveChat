@@ -43,12 +43,13 @@
     <string name="modification">修改资料</string>
     <string name="logout_btn">退出</string>
     <string name="cancel">取消</string>
+    <string name="head_img">头像</string>
     <!-- 注册界面-->
     <string name="affirm_password">确认密码</string>
     <string name="hint_affirm_password">请再输入一次</string>
     <!-- 发现界面-->
     <string name="friend_trends">好友动态</string>
-    <string name="nearby_friends">附近的人</string>
+    <string name="nearby_friends">身边</string>
     <string name="shake">摇一摇</string>
     <string name="news_rss">新闻订阅</string>
     <string name="weather">本地天气</string>
@@ -60,4 +61,7 @@
     <string name="News_sources">新闻来源</string>
     <string name="author">作者</string>
     <string name="hot">热度:</string>
+    <!-- 添加好友-->
+    <string name="input_username">输入用户名</string>
+    <string name="add">添加</string>
 </resources>
