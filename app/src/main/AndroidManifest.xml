@@ -78,6 +78,7 @@
             android:value="techscl#lovechat" />
         <!-- 声明sdk所需的service SDK核心功能-->
         <service android:name="com.easemob.chat.EMChatService" />
+        <receiver android:name=".receiver.NewMessageBroadcastReceiver"></receiver>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.techscl.lovechat;
+package com.techscl.lovechat.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

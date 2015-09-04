@@ -10,6 +10,7 @@ import com.easemob.chat.EMChat;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
 import com.easemob.chat.EMMessage;
+import com.techscl.lovechat.receiver.NewMessageBroadcastReceiver;
 
 /**
  * Created by dllo on 15/8/28.

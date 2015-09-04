@@ -18,7 +18,6 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
-import com.techscl.lovechat.NewMessageBroadcastReceiver;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.adapter.MainFragmentAdapter;
 import com.techscl.lovechat.db.sqlite.SQLiteDataBaseTools;
@@ -26,6 +25,7 @@ import com.techscl.lovechat.fragment.FindFragment;
 import com.techscl.lovechat.fragment.FriendsFragment;
 import com.techscl.lovechat.fragment.MeFragment;
 import com.techscl.lovechat.fragment.MsgFragment;
+import com.techscl.lovechat.receiver.NewMessageBroadcastReceiver;
 import com.techscl.lovechat.utils.L;
 
 import java.util.ArrayList;
@@ -105,6 +105,12 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * 加载菜单布局
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -112,6 +118,12 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * 菜单项监听
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

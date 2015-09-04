@@ -56,11 +56,16 @@ public class AddFriendActivity extends GestureActivity implements View.OnClickLi
         add.setOnClickListener(this);
     }
 
+    /**
+     * 点击事件
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.add:
-                new Thread(new Runnable() {
+                handler.post(new Runnable() {
                     @Override
                     public void run() {
                         try {
@@ -70,7 +75,7 @@ public class AddFriendActivity extends GestureActivity implements View.OnClickLi
                             e.printStackTrace();
                         }
                     }
-                }).start();
+                });
                 break;
         }
     }

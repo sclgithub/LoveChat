@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.easemob.EMCallBack;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.techscl.lovechat.LoveChatHXSDKHelper;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.base.GestureActivity;
 import com.techscl.lovechat.utils.L;
@@ -29,10 +30,18 @@ public class LoginActivity extends GestureActivity implements View.OnClickListen
     private LinearLayout login_layout;
     private Toolbar toolbar;
     private Context context;
-
+    private boolean autoLogin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 如果用户名密码都有，直接进入主页面
+        if (LoveChatHXSDKHelper.getInstance().isLogined()) {
+            autoLogin = true;
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+            return;
+        }
         setContentView(R.layout.activity_login);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置透明状态栏
 
