@@ -48,11 +48,8 @@ public class FindFragment extends Fragment implements View.OnClickListener {
             public void onResponse(String s) {
                 Gson gson = new Gson();// 实例化gson对象
                 Weather weathers = gson.fromJson(s, Weather.class);
-                L.i("天气:" + weathers.getDatanow().getWeather());
-                L.i("高温:" + weathers.getDatanow().getTempMax());
-                L.i("低温:" + weathers.getDatanow().getTempMin());
-                L.i("风力" + weathers.getDatanow().getWind());
-                weather.setText(weathers.getDatanow().getWeather().toString());
+                L.i("天气:" + s);
+                weather.setText(weathers.getDatanow().getWeather()+"");
                 max_temp.setText(weathers.getDatanow().getTempMax() + "");
                 min_temp.setText(weathers.getDatanow().getTempMin() + "");
                 wind.setText(weathers.getDatanow().getWind().toString());
