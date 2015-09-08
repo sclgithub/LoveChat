@@ -16,7 +16,11 @@ import android.view.WindowManager;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.easemob.EMConnectionListener;
+import com.easemob.chat.EMChat;
 import com.easemob.chat.EMChatManager;
+import com.easemob.chat.EMContactListener;
+import com.easemob.chat.EMContactManager;
 import com.easemob.chat.EMGroupManager;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.adapter.MainFragmentAdapter;
@@ -27,6 +31,7 @@ import com.techscl.lovechat.fragment.MeFragment;
 import com.techscl.lovechat.fragment.MsgFragment;
 import com.techscl.lovechat.receiver.NewMessageBroadcastReceiver;
 import com.techscl.lovechat.utils.L;
+import com.techscl.lovechat.utils.To;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +74,20 @@ public class MainActivity extends ActionBarActivity {
 
         EMChatManager.getInstance().loadAllConversations();
 
+        EMContactManager.getInstance().setContactListener(new MyContactListener());
+
+        EMChatManager.getInstance().addConnectionListener(new EMConnectionListener() {
+            @Override
+            public void onConnected() {
+
+            }
+
+            @Override
+            public void onDisconnected(int i) {
+
+            }
+        });
+        EMChat.getInstance().setAppInited();
     }
 
     /**
@@ -148,4 +167,41 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class MyContactListener implements EMContactListener {
+
+        @Override
+        public void onContactAdded(List<String> usernameList) {
+            // 保存增加的联系人
+
+        }
+
+        @Override
+        public void onContactDeleted(final List<String> usernameList) {
+            // 被删除
+
+        }
+
+        @Override
+        public void onContactInvited(String username, String reason) {
+            // 接到邀请的消息，如果不处理(同意或拒绝)，掉线后，服务器会自动再发过来，所以客户端不要重复提醒
+            L.i(username + reason);
+            To.showShort(username + reason + "");
+
+        }
+
+        @Override
+        public void onContactAgreed(String username) {
+            //同意好友请求
+            L.i(username);
+        }
+
+        @Override
+        public void onContactRefused(String username) {
+            // 拒绝好友请求
+
+        }
+
+    }
+
 }

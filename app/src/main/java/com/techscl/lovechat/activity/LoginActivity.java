@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.easemob.EMCallBack;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMGroupManager;
+import com.techscl.lovechat.LoveChat;
 import com.techscl.lovechat.LoveChatHXSDKHelper;
 import com.techscl.lovechat.R;
 import com.techscl.lovechat.base.GestureActivity;
@@ -113,6 +114,9 @@ public class LoginActivity extends GestureActivity implements View.OnClickListen
                         /**
                          * 存储登录状态
                          */
+                        LoveChat.getInstance().setUserName(username.getText().toString());
+                        LoveChat.getInstance().setPassword(password.getText().toString());
+
                         StartActivity.editor = StartActivity.preferences.edit();
                         StartActivity.editor.putBoolean("login", false);
                         StartActivity.editor.commit();

@@ -3,6 +3,8 @@ package com.techscl.lovechat.utils;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.techscl.lovechat.LoveChat;
+
 /**
  * Created by wuqi on 15/6/19.
  */
@@ -24,6 +26,15 @@ public class To {
     public static void showShort(Context context, CharSequence message) {
         if (isShow)
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+    /**
+     * 短时间显示Toast
+     *
+     * @param message
+     */
+    public static void showShort(CharSequence message) {
+        if (isShow)
+            Toast.makeText(LoveChat.loveChatContext, message, Toast.LENGTH_SHORT).show();
     }
 
     /**
